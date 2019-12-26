@@ -1,0 +1,34 @@
+// В этом файле должны быть стили для БЭМ-блока button, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+@import "../libraries/variables";
+@import "../libraries/mixins";
+
+.button {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 50px;
+  font: 600 #{$font-size} inherit;
+  color: inherit;
+  background: #D5AC63;
+  border-radius: $border-radius;
+  text-transform: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+
+
+  &--disabled,
+  &:disabled {
+    opacity: $opacity;
+    cursor: not-allowed;
+
+    @at-root a.btn--disabled {
+      pointer-events: none;
+    }
+  }
+}
