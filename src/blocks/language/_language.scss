@@ -1,0 +1,54 @@
+// В этом файле должны быть стили для БЭМ-блока language, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+@import "../../libraries/variables";
+@import "../../libraries/mixins";
+
+.language {
+  display: flex;
+  cursor: pointer;
+  padding-right: 15px;
+  position: relative;
+
+
+  @media (min-width: $screen-md) {
+    padding-right: 22px;
+  }
+
+
+  &::before {
+    @include pseudo;
+    top: calc(50% - 3.5px);
+    right: 0;
+    width: 10px;
+    height: 7px;
+    background: url('/icons/icon-arrow.svg') center / 10px 7px no-repeat;
+
+
+    @media (min-width: $screen-md) {
+      top: calc(50% - 5px);
+      width: 14px;
+      height: 10px;
+      background-size: 14px 10px;
+    }
+  }
+
+
+  &__list {
+    display: none;
+  }
+
+
+  &__title, &__item {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    color: $color-dark-grey;
+
+
+    @media (min-width: $screen-md) {
+      font-size: 14px;
+    }
+  }
+
+}

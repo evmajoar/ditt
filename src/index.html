@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="styles/index.min.css">
   </head>
 
   <body>
@@ -36,40 +35,52 @@
     <div class="page__inner">
       <header class="page-header">
         <div class="page-header__top-bar">
-          <span class="logo page--header__logo">
-            <img src="" alt="Логотип DITT">
-          </span>
-          <p class="page--header__contacts">
-            <a class="page--header__contacts-link" href="tel:+70000">+70000</a>
-            <button class="page--header__contacts-button" type="button">Обратный звонок</button>
-          </p>
+          <div class="page-header__top-bar-container">
+            <span class="logo page-header__logo">
+              <img src="images/logo.svg" alt="Логотип DITT" width="94" height="41">
+            </span>
+            <div class="language page-header__language">
+              <span class="language__title">en</span>
+              <ul class="language__list">
+                <li class="language__item">en</li>
+                <li class="language__item">pl</li>
+              </ul>
+            </div>
+            <p class="page-header__contacts">
+              <a class="page-header__contacts-link" href="tel:+78154376479">+7 (816) 477-40-36</a>
+              <button class="button page-header__contacts-button" type="button">Callback</button>
+            </p>
+          </div>
         </div>
         <div class="page-header__content">
-          <h1 class="page-header__content-title">High quality products and  individual approach</h1>
-          <p class="page-header__content-description">Uncommonly no it announcing melancholy an in. Up hung mr we give rest half. To sure calm much most long me mean.</p>
-          <a class="page-header__content-button" href="#">Order an installation</a>
+          <div class="page-header__content-container">
+            <h1 class="page-header__content-title">Installation of high quality kitchens</h1>
+            <p class="page-header__content-slogan">luxary services, individual approach</p>
+            <p class="page-header__content-description">Uncommonly no it announcing melancholy an in. Up hung mr we give rest half. To sure calm much most long me mean.</p>
+            <a class="button page-header__content-button" href="#">Say hello</a>
+          </div>
         </div>
       </header>
   
       <main class="page-content">
-  
+
         <!-- ADVANTAGES -->
         <section class="advantages">
           <div class="advantages__container">
             <ul class="advantages__list">
-              <li class="advantages__item">
-                <p class="advantages__item-text">over <b>500 projects</b></p>
+              <li class="advantages__item  advantages__item--star">
+                <p class="advantages__item-text">over <span><b>500</b> projects</span></p>
               </li>
-              <li class="advantages__item">
-                <p class="advantages__item-text">over <b>15 years of experience</b></p>
+              <li class="advantages__item  advantages__item--diamond">
+                <p class="advantages__item-text">over <span><b>15</b> years of <br> experience</span></p>
               </li>
-              <li class="advantages__item">
-                <p class="advantages__item-text">Uncommonly no it announcing melancholy an in.</p>
+              <li class="advantages__item  advantages__item--hart">
+                <p class="advantages__item-text">over <span><b>15</b> years of <br> experience</span></p>
               </li>
             </ul>
           </div>
         </section>
-  
+
         <!-- ABOUT US -->
         <section class="about-us">
           <div class="about-us__container">
@@ -86,7 +97,7 @@
             </div>
           </div>
         </section>
-  
+
         <!-- PROJECTS -->
         <section class="projects">
           <div class="projects__container">
@@ -104,9 +115,9 @@
             </ul>
           </div>
         </section>
-        
-        <div class="page-content__wrapper  page-content__wrapper--contacts"> 
-  
+
+        <div class="page-content__wrapper  page-content__wrapper--contacts">
+
           <!-- OUR CONACTS -->
           <section class="our-contacts">
             <div class="our-contacts__container">
@@ -138,25 +149,25 @@
               </ul>
             </div>
           </section>
-  
+
           <!-- CONACT US -->
           <section class="contact-us">
             <div class="contact-us__container">
               <h2 class="our-contacts__title">Contact us</h2>
               <form class="form our-contacts__form" action="/" method="post">
-                <fieldset class="form__fieldset"> 
-                  <legend class="form__legend">Contact form</legend> 
-                  <label class="field-text"> 
-                    <span class="field-text__name">Youe name</span> 
-                    <span class="field-text__input-wrap"> 
-                      <input class="field-text__input" type="text" name="name" placeholder="Name" autocomplete="off"> 
-                    </span> 
+                <fieldset class="form__fieldset">
+                  <legend class="form__legend">Contact form</legend>
+                  <label class="field-text">
+                    <span class="field-text__name">Youe name</span>
+                    <span class="field-text__input-wrap">
+                      <input class="field-text__input" type="text" name="name" placeholder="Name" autocomplete="off">
+                    </span>
                   </label>
-                  <label class="field-text"> 
-                    <span class="field-text__name">Your E-mail</span> 
-                    <span class="field-text__input-wrap"> 
-                      <input class="field-text__input" type="email" name="email" placeholder="E-mail" autocomplete="off"> 
-                    </span> 
+                  <label class="field-text">
+                    <span class="field-text__name">Your E-mail</span>
+                    <span class="field-text__input-wrap">
+                      <input class="field-text__input" type="email" name="email" placeholder="E-mail" autocomplete="off">
+                    </span>
                   </label>
                   <button class="button form__submit" type="submit">Send</button>
                 </fieldset>
@@ -164,14 +175,14 @@
               </form>
             </div>
           </section>
-  
+
         </div>
-  
+
       </main>
-  
+
       <footer class="page-footer">
         <div class="page-footer__container">
-  
+
           <!-- SOCIAL -->
           <section class="social">
             <h2 class="social__title">Join us on Facebook</h2>
@@ -183,9 +194,9 @@
               </li>
             </ul>
           </section>
-  
+
           <a class="page-footer__link" href="#">Политика конфиденциальности</a>
-  
+
         </div>
       </footer>
     </div>

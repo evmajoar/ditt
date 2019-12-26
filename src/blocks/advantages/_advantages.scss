@@ -1,0 +1,139 @@
+// В этом файле должны быть стили для БЭМ-блока advantages, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+@import "../../libraries/variables";
+@import "../../libraries/mixins";
+
+.advantages {
+  background: $color-dark-grey;
+  padding-top: 56px;
+  padding-bottom: 71px;
+
+
+  @media (min-width: $screen-md) {
+    padding-top: 54px;
+    padding-bottom: 65px;
+  }
+
+
+  @media (min-width: $screen-xl) {
+    padding-top: 60px;
+    padding-bottom: 82px;
+  }
+ 
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 ($grid-gutter-width / 2);
+    max-width: $max-mob;
+    width: 100%;
+
+
+    @media (min-width: $screen-md) {
+      max-width: $max-tablet;
+      padding: 0 ($grid-gutter-width + 15);
+    }
+
+
+    @media (min-width: $screen-xl) {
+      max-width: $max-pc;
+      padding: 0 ($grid-gutter-width);
+    }
+  }
+
+
+  &__list {
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 40px;
+    }
+  }
+
+
+  &__item {
+    position: relative;
+    padding-top: 90px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+    &::before {
+      @include pseudo;
+      top: 0;
+      width: 70px;
+      height: 70px;
+      left: calc(50% - 35px);
+    }
+
+
+    &-text {
+      margin: 0 auto;
+      color: $white;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+
+
+      @media (min-width: $screen-xl) {
+        font-size: 18px;
+      }
+      
+
+      span {
+        display: flex;
+        align-items: center;
+
+
+        b {
+          font-size: 41px;
+          font-weight: 600;
+          display: block;
+          padding: 0 13px;
+
+
+          @media (min-width: $screen-xl) {
+            font-size: 48px;
+          }
+        }
+      }
+    }
+
+
+    &--star {
+      &::before {
+        background: url('/icons/icon-star.svg') center / 70px 70px no-repeat;
+      }
+    }
+
+
+    &--diamond {
+      &::before {
+        background: url('/icons/icon-diamond.svg') center / 70px 70px no-repeat;
+      }
+    }
+
+
+    &--hart {
+      &::before {
+        width: 65px;
+        height: 65px;
+        background: url('/icons/icon-hart.svg') center / 65px 65px no-repeat;
+        top: 10px;
+        left: calc(50% - 32.5px);
+      }
+    }
+  }
+
+} 

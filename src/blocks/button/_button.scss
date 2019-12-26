@@ -1,8 +1,8 @@
 // В этом файле должны быть стили для БЭМ-блока button, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 
-@import "../libraries/variables";
-@import "../libraries/mixins";
+@import "../../libraries/variables";
+@import "../../libraries/mixins";
 
 .button {
   $block-name: &; // #{$block-name}__element
@@ -14,12 +14,25 @@
   min-height: 50px;
   font: 600 #{$font-size} inherit;
   color: inherit;
-  background: #D5AC63;
+  background: $color-biege;
   border-radius: $border-radius;
   text-transform: none;
   white-space: nowrap;
   text-overflow: ellipsis;
   user-select: none;
+  text-transform: uppercase;
+  transition: all $transition-time ease-in-out;
+
+  &:active {
+    background: $color-dark-grey;
+  }
+
+
+  &:hover {
+    @media (min-width: $screen-xl) {
+      background: $color-dark-grey;
+    }
+  }
 
 
   &--disabled,
