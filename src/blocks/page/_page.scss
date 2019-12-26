@@ -15,10 +15,56 @@
   min-height: 100%;
   height: 100%;
 
+
   &__inner {
     display: flex;
     flex-direction: column;
     min-height: 100%;
     height: 100%;
+  }
+
+
+  &-content {
+    &__wrapper {
+      background: $color-dark-grey;
+      padding: 60px 0 48px;
+
+
+      @media (min-width: $screen-md) {
+        padding: 82px 0 90px;
+      }
+
+
+      @media (min-width: $screen-xl) {
+        padding: 101px 0 114px;
+      }
+    }
+
+
+    &__container {
+      color: $white;
+      margin: 0 auto;
+      padding: 0 ($grid-gutter-width / 2);
+      max-width: $max-mob;
+      width: 100%;
+
+
+      @media (min-width: $screen-md) {
+        max-width: $max-tablet;
+        padding: 0 ($grid-gutter-width + 15);
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+      }
+
+
+      @media (min-width: $screen-xl) {
+        max-width: $max-pc;
+        padding: 0 ($grid-gutter-width);
+        
+        grid-column-gap: 250px;
+      }
+    }
   }
 }

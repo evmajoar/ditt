@@ -6,19 +6,16 @@
 
 .advantages {
   background: $color-dark-grey;
-  padding-top: 56px;
-  padding-bottom: 71px;
+  padding: 56px 0 71px;
 
 
   @media (min-width: $screen-md) {
-    padding-top: 54px;
-    padding-bottom: 65px;
+    padding: 54px 0 65px;
   }
 
 
   @media (min-width: $screen-xl) {
-    padding-top: 60px;
-    padding-bottom: 82px;
+    padding: 60px 0 82px;
   }
  
 
@@ -113,14 +110,14 @@
 
     &--star {
       &::before {
-        background: url('/icons/icon-star.svg') center / 70px 70px no-repeat;
+        background: url('images/icon-star.svg') center / 70px 70px no-repeat;
       }
     }
 
 
     &--diamond {
       &::before {
-        background: url('/icons/icon-diamond.svg') center / 70px 70px no-repeat;
+        background: url('images/icon-diamond.svg') center / 70px 70px no-repeat;
       }
     }
 
@@ -129,7 +126,7 @@
       &::before {
         width: 65px;
         height: 65px;
-        background: url('/icons/icon-hart.svg') center / 65px 65px no-repeat;
+        background: url('images/icon-hart.svg') center / 65px 65px no-repeat;
         top: 10px;
         left: calc(50% - 32.5px);
       }

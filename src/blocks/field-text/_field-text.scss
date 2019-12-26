@@ -12,6 +12,7 @@
 
   &__name {
     @include field-name;
+    @include hide-text;
   }
 
   &__input-wrap {
@@ -28,22 +29,28 @@
       min-height: calc(#{$textarea-height} + 2px);
       resize: none;
     }
+
+    @media (min-width: $screen-xl) {
+      min-height: 50px !important;
+    }
+
+    &--error {
+      color: $color-danger;
+      // border: 1px solid $color-danger;
+
+      &:focus {
+        border: 1p solid $color-danger;
+      }
+    }
   }
 
   &__help-text {
     @include field-help-text;
   }
 
-  &--error {
-    #{$block-name}__name,
-    #{$block-name}__input,
-    #{$block-name}__help-text {
-      color: $color-danger;
-    }
+}
 
-    #{$block-name}__input {
-      border-color: $color-danger;
-      background-color: lighten($color-danger, 35%);
-    }
-  }
+label.field-text__input--error {
+  font-size: 12px;
+  margin: 5px 0 0 30px;
 }

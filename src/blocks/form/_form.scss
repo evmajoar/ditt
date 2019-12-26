@@ -28,5 +28,45 @@
     white-space: normal;
     color: currentColor;
     padding: 0;
+    @include hide-text;
+  }
+
+
+  &__text {
+    margin-top: 20px;
+    font-size: 14px;
+
+    @media (min-width: $screen-md) {
+      text-align: right;
+    }
+
+
+    @media (min-width: $screen-xl) {
+      text-align: left;
+    }
+  }
+
+
+  &__submit {
+    min-height: 45px !important;
+    min-width: 100% !important;
+
+    &:active {
+      background: $white !important;
+      color: $text-color !important;
+    }
+
+
+    &:hover {
+      @media (min-width: $screen-xl) {
+        background: $white !important;
+        color: $text-color !important;
+      }
+    }
+
+
+    @media (min-width: $screen-xl) {
+      min-height: 50px !important;
+    }
   }
 }

@@ -14,7 +14,7 @@
 
 
   &__content {
-    background: url('/images/header-content-bg.jpg') center / cover  no-repeat;
+    background: url('images/header-content-bg.jpg') center / cover no-repeat;
   }
 
 
@@ -108,7 +108,6 @@
       @media (min-width: $screen-xl) {
         font-size: 60px;
       }
-
 
 
       &::after {
@@ -249,7 +248,7 @@
           left: 0;
           width: 13px;
           height: 25px;
-          background: url('/icons/icon-phone.svg') center / 13px 25px no-repeat;
+          background: url('images/icon-phone.svg') center / 13px 25px no-repeat;
         }
       }
     }

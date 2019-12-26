@@ -1,0 +1,218 @@
+// В этом файле должны быть стили для БЭМ-блока about-us, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+@import "../../libraries/variables";
+@import "../../libraries/mixins";
+
+.about-us {
+  padding: 64px 0 55px;
+
+
+  @media (min-width: $screen-md) {
+    padding: 50px 0 54px;
+  }
+
+
+  @media (min-width: $screen-xl) {
+    padding: 118px 0 76px;
+  }
+
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 ($grid-gutter-width / 2);
+    max-width: $max-mob;
+    width: 100%;
+
+
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 34px;
+      max-width: $max-tablet;
+      padding: 0 ($grid-gutter-width + 15);
+    }
+
+
+    @media (min-width: $screen-xl) {
+      max-width: $max-pc;
+      padding: 0 ($grid-gutter-width);
+    }
+  }
+
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+
+    @media (min-width: $screen-xl) {
+      font-size: 24px;
+    }
+  }
+
+
+  &__content {
+    &-title {
+      font-weight: 600;
+      font-size: 30px;
+      padding-bottom: 20px;
+      position: relative;
+      margin-top: 5px;
+
+
+      @media (min-width: $screen-md) {
+        font-size: 40px;
+      }
+
+
+      @media (min-width: $screen-xl) {
+        font-size: 48px;
+      }
+
+
+      &::after {
+        @include pseudo;
+        height: 8px;
+        width: 120px;
+        background: $color-biege;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+
+    &-text {
+      margin-top: 20px;
+      font-size: 14px;
+
+
+      &--bold {
+        font-size: 20px;
+        font-weight: 600;
+
+
+        @media (min-width: $screen-md) {
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+
+
+  &__video {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 30px;
+
+
+    @media (min-width: $screen-md) {
+      order: -1;
+      margin-top: 0;
+      align-self: center;
+    }
+
+
+    iframe {
+      height: auto;
+      width: 100%;
+
+
+      @media (min-width: $screen-md) {
+        height: 180px;
+      }
+
+
+      @media (min-width: $screen-xl) {
+        height: 338px;
+      }
+    }
+  }
+
+
+  &__list {
+    margin-top: 35px;
+
+
+    @media (min-width: $screen-md) {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 15px;
+      margin-top: 50px;
+    }
+  }
+
+
+  &__item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 50px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    min-height: 37px;
+
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+
+
+    @media (min-width: $screen-xl) {
+      font-size: 18px;
+    }
+
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+    &::before {
+      @include pseudo;
+      top: calc(50% - 18.5px);
+      left: 0;
+      height: 37px;
+    }
+
+
+    &--earth {
+      min-height: 35px;
+
+      &::before {
+        background: url('images/icon-earth.svg') center / 35px 35px no-repeat;
+        top: calc(50% - 17.5px);
+        height: 35px;
+        width: 35px;
+      }
+    }
+
+
+    &--master {
+      &::before {
+        background: url('images/icon-master.svg') center / 28px 37px no-repeat;
+        width: 28px;
+      }
+    }
+
+
+    &--recommend {
+      &::before {
+        background: url('images/icon-recommend.svg') center / 37px 37px no-repeat;
+        width: 37px;
+      }
+    }
+
+
+    &--car {
+      &::before {
+        background: url('images/icon-car.svg') center / 37px 37px no-repeat;
+        width: 37px;
+      }
+    }
+  }
+
+} 

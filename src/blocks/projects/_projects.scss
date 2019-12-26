@@ -1,0 +1,113 @@
+// В этом файле должны быть стили для БЭМ-блока project, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.projects {
+  position: relative;
+  
+  &__title {
+    @include hide-text;
+  }
+
+
+  &__list {
+    img {
+      min-height: 244px;
+      object-fit: cover;
+
+      @media (min-width: $screen-md) {
+        min-height: 600px;
+      }
+
+      @media (min-width: $screen-xl) {
+        min-height: 1px;
+        object-fit: fill;
+      }
+    }
+  }
+
+
+  &__arrows {
+    position: absolute;
+    height: 40px;
+    top: calc(50% - 20px);
+    left: calc(50% - 160px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 ($grid-gutter-width / 2);
+    max-width: $max-mob;
+    width: 100%;
+    z-index: 2;
+
+    
+    @media (min-width: $screen-md) {
+      height: 80px;
+      max-width: $max-tablet;
+      padding: 0 ($grid-gutter-width + 15);
+      left: calc(50% - 384px);
+    }
+
+
+    @media (min-width: $screen-xl) {
+      max-width: $max-pc;
+      padding: 0 ($grid-gutter-width);
+      left: calc(50% - 500px);
+    }
+  }
+
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 0 !important;
+    position: relative;
+    border-radius: 50%;
+    background: transparentize(#222222, .25);
+    transition: all $transition-time ease-in-out;
+
+
+    @media (min-width: $screen-md) {
+      height: 80px;
+      width: 80px;
+    }
+
+    
+    &:active {
+      background: #222222;
+    }
+
+    &:hover {
+      @media (min-width: $screen-xl) {
+        background: #222222;
+      }
+    }
+
+
+    &::before {
+      @include pseudo;
+      background: url('images/icon-arrow-left.svg') center / 25px 25px no-repeat;
+      width: 25px;
+      height: 25px;
+      top: calc(50% - 12.5px);
+      left: calc(50% - 12.5px);
+
+
+      @media (min-width: $screen-md) {
+        width: 50px;
+        height: 50px;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        background-size: 50px;
+      }
+    }
+
+
+    &--next {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+
+  }
+
+}

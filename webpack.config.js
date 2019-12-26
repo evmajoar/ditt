@@ -5,11 +5,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR = path.resolve(__dirname, './src/index.js');
+const DEV_MODE = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-  entry: './src/index.js',
+  entry: APP_DIR,
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: BUILD_DIR,
     filename: 'bundle.js',
   },
   optimization: {
@@ -21,7 +25,8 @@ module.exports = {
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: DEV_MODE ? '[name].css' : '[name].[hash].css',
+      chunkFilename: DEV_MODE ? '[id].css' : '[id].[hash].css',
     })
   ],
   module: {
@@ -37,6 +42,17 @@ module.exports = {
       {
         test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'
       },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]'
+            }
+          }
+        ]
+      }
     ]
   },
   devServer: {
